@@ -66,8 +66,8 @@ while n<10:
     except RuntimeError:
         print("Unable to read from sensor, retrying...")
         continue
-itime = time.time()
-data = [itime, aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"]]
+    itime = time.time()
+    data = [itime, aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"]]
 
     print()
     print("Concentration Units (standard)")
