@@ -47,11 +47,9 @@ pm25 = PM25_UART(uart, reset_pin)
 
 import csv
 f = open('data.csv','w', newline = '')
-mega_data = ["time", "PM1.0", "PM2.5", "PM10"]
+meta_data = ["time", "PM1.0", "PM2.5", "PM10"]
 writer = csv.writer(f)
 writer.writerow(meta_data)
-writer.writerow(data)
-f.close()
 
 
 print("Found PM2.5 sensor, reading data...")
@@ -68,6 +66,7 @@ while n<10:
         continue
     itime = time.time()
     data = [itime, aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"]]
+    writer.writerow(data)
 
     print()
     print("Concentration Units (standard)")
@@ -94,3 +93,4 @@ while n<10:
 
 
 
+f.close()
