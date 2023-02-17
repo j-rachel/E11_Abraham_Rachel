@@ -30,10 +30,9 @@ from adafruit_pm25.uart import PM25_UART
 pm25 = PM25_UART(uart, reset_pin)
 
 while itime < (start_time + run_time): 
+    time.sleep(1)
     itime = int(time.time()) # gives u the massive amount of seconds, timestamp 
     #value = random.random() #the same as grapping data from a server
-    print(itime, value)
-    time.sleep(1)
     try:
         aqdata = pm25.read()
         # print(aqdata)
