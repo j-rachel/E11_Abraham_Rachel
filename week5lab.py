@@ -61,12 +61,9 @@ while itime < (start_time + run_time):
     print("Particles > 5.0um / 0.1L air:", aqdata["particles 50um"])
     print("Particles > 10 um / 0.1L air:", aqdata["particles 100um"])
     print("---------------------------------------")
-
     i2c = board.I2C()
     bme680 = adafruit_bme680.Adafruit_BME680_I2C(i2c)
     bme680.sea_level_pressure = 1013.25
-   
-
     data = [itime, aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"], bme680.temperature,bme680.gas, bme680.relative_humidity, bme680.pressure, bme680.altitude]
     writer.writerow(data)
 
