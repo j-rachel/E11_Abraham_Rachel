@@ -21,8 +21,9 @@ print(file_name)
 file = open(file_name, 'w', newline = "")  
 writer = csv.writer(file)
 meta_data = ["time", "PM1.0", "PM2.5", "PM10", "temperature", "gas", "relative humility", "pressure", "altitude"]
-writer.write(meta_data)
+writer.writerow(meta_data)
 
+reset_pin = None
 import serial
 uart = serial.Serial("/dev/ttyS0", baudrate=9600, timeout=0.95)
 from adafruit_pm25.uart import PM25_UART
