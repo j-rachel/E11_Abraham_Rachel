@@ -7,7 +7,7 @@ from adafruit_pm25.i2c import PM25_I2C
 import adafruit_bme680
 import board
 
-ttime.sleep(120)
+time.sleep(120)
 print(sys.argv)
 start_time = int(time.time())
 itime = start_time  
