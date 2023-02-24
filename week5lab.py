@@ -7,10 +7,10 @@ from adafruit_pm25.i2c import PM25_I2C
 import adafruit_bme680
 import board
 
-
+ttime.sleep(120)
 print(sys.argv)
 start_time = int(time.time())
-itime = start_time 
+itime = start_time  
 run_time = int(sys.argv[1]) # gets arguments from terminal, has to input after name 
 
 file_name = 'data.csv' #saves file 
@@ -31,6 +31,7 @@ pm25 = PM25_UART(uart, reset_pin)
 i2c = board.I2C()
 bme680 = adafruit_bme680.Adafruit_BME680_I2C(i2c)
 bme680.sea_level_pressure = 1013.25
+
 
 while itime < (start_time + run_time): 
     time.sleep(1)
