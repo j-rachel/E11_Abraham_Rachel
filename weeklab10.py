@@ -4,7 +4,7 @@ import time
 import sys
 import csv
 
-channel = 6
+channel = 17
 counts = 0
 
 if len(sys.argv) > 1:
