@@ -14,11 +14,11 @@ if len(sys.argv) > 1:
   if len(sys.argv) > 3:
    output_file_name = sys.argv[3]
    output_file_name = output_file_name + ".csv"
- 
- def my_callback(channel):
-  global counts
-  #print('\falling at ' + str(datetime.datetime.now()))
-  counts = counts + 1
+
+def my_callback(channel):
+ global counts
+ #print('\falling at ' + str(datetime.datetime.now()))
+ counts = counts + 1
   
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(channel, GPIO.IN, pull_up_down=GPIO.PUD_UP)
